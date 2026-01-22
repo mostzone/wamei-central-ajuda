@@ -61,8 +61,8 @@ Para saber mais sobre como personalizar o painel de controle, consulte a documen
 
 ## Referências Internas
 
-- [Personalização do painel de controle](/painel-de-controle/personalizacao-do-painel-de-controle)
-- [Avaliações](/finalizacao-e-analise-de-qualidade/avaliacoes)
+- [Caixa de Entrada](/caixa-entrada)
+- [Finalização e Qualidade](/finalizacao)
 
 ## Dicas de Uso
 

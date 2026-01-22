@@ -129,6 +129,5 @@ Para criar automações eficazes:
 
 Para aprofundamento, consulte:
 
-- [Chatbot Nativo (Construtor de Fluxo)](//automacao-e-chatbots/automacoes-nativas/chatbot-nativo-construtor-de-fluxo)
-- [Automações Simples](//automacao-e-chatbots/automacoes-nativas/automacoes-simples)
-- [Automação do Funil de Oportunidades](//funil-de-oportunidades/4.-automatizando-seu-funil-com-acoes-e-fluxos)
+- [Automação e Chatbots (Visão Geral)](/automacao-chatbots)
+- [Funil de Oportunidades](/funil)

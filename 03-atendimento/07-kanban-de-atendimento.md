@@ -23,7 +23,7 @@ Os kanbans de atendimento podem ser organizados por:
 
 Esta visualização utiliza as **Etapas do Funil** para organizar as *oportunidades de negócio*. É a ferramenta para a gestão de processos comerciais, permitindo acompanhar o progresso de cada oportunidade desde o primeiro contato até o fechamento.
 
-Para mais detalhes sobre o Kanban de Oportunidades, consulte a documentação de [Funil de Oportunidades](/funil-de-oportunidades/3.-visualizando-seus-funis-e-oportunidades).
+Para mais detalhes sobre o Kanban de Oportunidades, consulte a documentação de [Funil de Oportunidades](/funil).
 
 ## Acesso
 
@@ -95,6 +95,6 @@ O Kanban de Atendimento integra-se com outras funcionalidades do sistema:
 
 Para aprofundamento, consulte os seguintes recursos:
 
-- [Configurações de Kanban (CRM)](//configuracao-inicial-e-estrutural-admin/configuracoes-gerais-admin/crm/gerenciar-kanban)
-- [Tela de Atendimento](/caixa-de-entrada-e-ferramentas-de-conversa/tela-de-atendimento)
-- [Funil de Oportunidades](/funil-de-oportunidades)
+- [Configurações Gerais](/config-gerais)
+- [Caixa de Entrada](/caixa-entrada)
+- [Funil de Oportunidades](/funil)

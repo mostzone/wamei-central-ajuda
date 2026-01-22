@@ -81,7 +81,7 @@ As automações são especialmente úteis nas seguintes situações:
 
 Para implementar automações na sua operação, explore as seguintes documentações:
 
-- **[Automações Nativas](/automacao-e-chatbots/automacoes-nativas):** Aprenda a criar fluxos diretamente no Wamei Chat.
-- **[Automações com Ferramentas Externas](/automacao-e-chatbots/automacoes-com-ferramentas-externas):** Integre com Typebot e N8N.
-- **[Inteligência Artificial](/automacao-e-chatbots/inteligencia-artificial):** Configure respostas automáticas com IA.
-- **[Campanhas e Comunicação Ativa](/automacao-e-chatbots/campanhas-e-comunicacao-ativa):** Aprenda a realizar comunicações proativas.
+- **[Automações Nativas](/automacoes-nativas):** Aprenda a criar fluxos diretamente no Wamei Chat.
+- **[Automações com Ferramentas Externas](/automacoes-externas):** Integre com Typebot e N8N.
+- **[Inteligência Artificial](/inteligencia-artificial):** Configure respostas automáticas com IA.
+- **[Campanhas e Comunicação Ativa](/campanhas):** Aprenda a realizar comunicações proativas.

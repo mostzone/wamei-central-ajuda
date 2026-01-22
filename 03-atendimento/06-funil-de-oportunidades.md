@@ -130,13 +130,13 @@ Um vídeo demonstrativo está disponível para uma explicação prática da util
 
 ## Referências Internas
 
-Para aprofundamento, consulte os seguintes recursos:
+Para aprofundamento, consulte as seções acima:
 
-- [1. Configurando seus Funis e Etapas](/funil-de-oportunidades/1.-configurando-seus-funis-e-etapas)
-- [2. Criando uma nova oportunidade](/funil-de-oportunidades/2.-criando-uma-nova-oportunidade)
-- [3. Visualizando seus funis e oportunidades](/funil-de-oportunidades/3.-visualizando-seus-funis-e-oportunidades)
-- [4. Automatizando seu Funil com Ações e Fluxos](/funil-de-oportunidades/4.-automatizando-seu-funil-com-acoes-e-fluxos)
-- [5. Ações em tickets (Follow-up Automático)](/funil-de-oportunidades/5.-acoes-em-tickets-follow-up-automatico)
+- 1. Configurando seus Funis e Etapas
+- 2. Criando uma nova oportunidade
+- 3. Visualizando seus funis e oportunidades
+- 4. Automatizando seu Funil com Ações e Fluxos
+- 5. Ações em tickets (Follow-up Automático)
 
 ## Benefícios do Funil de Oportunidades
 
