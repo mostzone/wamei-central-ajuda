@@ -37,10 +37,6 @@ export const itemIcons = {
     'visao-geral-integracoes': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>',
     'telefonia': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
     'notificacoes': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>',
-
-    // API
-    'api-admin': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
-    'api-postman': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
 }
 
 export const navigation = [
@@ -103,15 +99,6 @@ export const navigation = [
             { id: 'telefonia', title: 'Ligações e Telefonia', file: '05-integracoes/02-ligacoes-telefonia.md' },
             { id: 'notificacoes', title: 'Notificações Web Push', file: '05-integracoes/03-notificacoes-web-push.md' },
         ]
-    },
-    {
-        id: 'api',
-        title: 'API',
-        icon: 'code',
-        items: [
-            { id: 'api-admin', title: 'API Admin', file: '06-api/01-api-admin.md' },
-            { id: 'api-postman', title: 'API Postman', file: '06-api/02-api-postman.md' },
-        ]
     }
 ]
 
@@ -132,5 +119,4 @@ export const categoryDescriptions = {
     atendimento: 'Ferramentas do dia a dia: caixa de entrada, organização, funil e relatórios.',
     automacao: 'Crie chatbots, automações com IA e campanhas de comunicação ativa.',
     integracoes: 'Conecte telefonia, notificações push e outras ferramentas externas.',
-    api: 'Documentação técnica da API para integrações personalizadas.'
 }

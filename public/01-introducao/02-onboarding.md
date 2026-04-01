@@ -12,9 +12,7 @@ Durante o onboarding, você receberá todas as informações necessárias sobre 
 
 Antes de iniciar o processo de configuração, certifique-se de ter em mãos as seguintes informações:
 
-**Credenciais de Acesso:** Você receberá por e-mail ou através do sistema de tickets todas as credenciais necessárias para acessar a plataforma. Guarde estas informações em local seguro.
-
-**Recursos do Servidor:** Verifique se o servidor onde o Wamei Chat está instalado atende aos requisitos mínimos de hardware e software especificados na documentação de requisitos.
+**Credenciais de Acesso:** Você receberá por e-mail ou através do sistema de tickets as credenciais iniciais para acessar a plataforma. Guarde estas informações em local seguro.
 
 **Equipe Responsável:** Identifique quem será responsável pela administração do sistema e pela gestão dos atendentes. Recomendamos que pelo menos uma pessoa da sua equipe seja designada para estudar toda a documentação.
 
@@ -22,22 +20,16 @@ Antes de iniciar o processo de configuração, certifique-se de ter em mãos as 
 
 O onboarding completo inclui as seguintes etapas principais:
 
-1. **Recebimento das Credenciais:** Após a conclusão da instalação pela equipe Wamei Chat, você receberá todas as credenciais de acesso através do sistema de tickets.
+1. **Recebimento das Credenciais:** Após o setup da sua instância Wamei Chat, você receberá suas credenciais de acesso.
 
-2. **Primeiro Login:** Acesse a plataforma pela primeira vez utilizando as credenciais do Superadmin fornecidas.
+2. **Primeiro Login:** Acesse a plataforma utilizando as credenciais fornecidas.
 
-3. **Validação da Assinatura:** Acesse o painel de assinatura para inserir sua chave de licença e validar a assinatura.
+3. **Configuração da Equipe:** Crie os perfis de atendentes e supervisores conforme a estrutura da sua empresa.
 
-4. **Exploração do Painel Superadmin:** Familiarize-se com as opções de configuração disponíveis no painel de mais alto nível.
+4. **Conexão de Canais:** Siga as instruções detalhadas para conectar seu primeiro canal de comunicação (WhatsApp, Instagram, etc).
 
-5. **Criação do Usuário Admin:** Crie um usuário com perfil Administrador para gerenciar a operação de atendimento.
-
-6. **Conexão do Primeiro Canal:** Siga as instruções detalhadas para conectar seu primeiro canal de comunicação.
-
-7. **Teste da Operação:** Realize testes práticos para garantir que tudo está funcionando corretamente.
+5. **Teste da Operação:** Realize testes práticos para garantir que o fluxo de atendimento está funcionando corretamente.
 
 ## Suporte Durante o Onboarding
 
 Caso tenha dúvidas durante qualquer etapa do processo de onboarding, você pode contar com nosso suporte técnico. Estamos disponíveis para ajudar a resolver qualquer dificuldade e garantir que você aproveite ao máximo todas as funcionalidades do Wamei Chat.
-
-Lembre-se de que o suporte do Wamei Chat foca no funcionamento da plataforma. Para dúvidas sobre criação de automações e fluxos de chatbot, recomendamos consultar a documentação específica ou contratar serviços de consultoria especializada.

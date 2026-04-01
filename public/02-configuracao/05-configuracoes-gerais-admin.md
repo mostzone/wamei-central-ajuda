@@ -40,8 +40,6 @@ A seção de Integrações permite conectar o Wamei Chat com sistemas externos p
 
 **Webhooks:** Possibilidade de enviar e receber dados de sistemas externos através de URLs configuráveis.
 
-**API:** Acessar e utilizar a API do Wamei Chat para integrações programáticas com outros sistemas.
-
 ### CRM
 
 O módulo de CRM (Customer Relationship Management) permite gerenciar o relacionamento com os clientes de forma organizada e eficiente. As funcionalidades incluem:

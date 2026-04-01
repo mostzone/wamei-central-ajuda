@@ -2,62 +2,46 @@
 
 ## O que é o Wamei Chat?
 
-O Wamei Chat é uma plataforma de atendimento e automação **auto-hospedada (self-hosted)**. Ele foi criado para agências, desenvolvedores e empreendedores que desejam ter **controle total** sobre sua ferramenta de comunicação ou criar seu **próprio serviço de SaaS (White-Label)**, revendendo o sistema com sua própria marca.
+O Wamei Chat é uma plataforma de atendimento e automação de alta performance. Ele foi criado para empresas que buscam centralizar sua comunicação, automatizar fluxos e gerenciar equipes de atendimento com eficiência e controle total.
 
-O Wamei Chat é descrito como um "motor de alta performance", fornecendo a tecnologia central robusta e flexível para ser instalada no próprio servidor do usuário, permitindo total liberdade para construir um negócio. O sistema centraliza canais de comunicação e permite automações poderosas com chatbots e agentes de inteligência artificial, com dois diferenciais-chave:
+O sistema centraliza diversos canais de comunicação (WhatsApp, Instagram, Facebook, etc.) e permite a criação de automações poderosas com chatbots e agentes de inteligência artificial. Seus principais pilares são:
 
-1. **Controle (Auto-hospedagem):** O sistema roda no servidor do usuário (VPS), garantindo total controle sobre os dados, performance e customizações, sem as limitações de plataformas de terceiros.
+1. **Centralização:** Gerencie todos os seus canais de atendimento em uma única tela, facilitando o trabalho da sua equipe.
 
-2. **Sua Marca, Seu Negócio (White-Label):** Através de um painel Super Admin, a plataforma pode ser customizada com a logo e cores do usuário para ser revendida a clientes, criando uma empresa de atendimento digital no modelo SaaS.
+2. **Automação:** Crie fluxos inteligentes que atendem seus clientes 24h por dia, qualificando leads e resolvendo dúvidas frequentes de forma automática.
 
-## O Wamei Chat é a solução perfeita para você se:
+## A quem se destina o Wamei Chat?
 
-- **Você é uma Agência ou Desenvolvedor:** Que busca uma solução de atendimento robusta para oferecer aos clientes, sem a necessidade de desenvolvimento do zero.
+O Wamei Chat é a solução ideal para:
 
-- **Você é um Empreendedor Técnico:** Que deseja criar um negócio de SaaS escalável, com altas margens de lucro e controle sobre o produto.
+- **Empresas de Todos os Tamanhos:** Que buscam profissionalizar seu atendimento digital e aumentar a produtividade da equipe.
+- **Negócios Focados em Escala:** Que precisam de automação para lidar com grandes volumes de mensagens sem perder a qualidade.
+- **Equipes de Vendas e Suporte:** Que necessitam de ferramentas como Kanban, Funil de Oportunidades e Relatórios detalhados para gerir o ciclo de vida do cliente.
 
-- **Você é uma Empresa com Necessidades Específicas:** Que precisa de uma plataforma de comunicação adaptável e profundamente integrável aos seus sistemas, com total governança sobre os dados.
+## Objetivo desta Central de Ajuda
 
-- **Você está disposto a gerenciar sua própria infraestrutura:** Entendendo que o controle total implica responsabilidade pela gestão do seu servidor (VPS).
-
-## O Wamei Chat talvez não seja a melhor opção se:
-
-- Você busca uma solução "plug-and-play" na nuvem, sem preocupações com a gestão de um servidor.
-
-- Você não deseja ter a responsabilidade pela infraestrutura técnica da sua operação.
-
-- Você precisa de suporte para criar suas automações e fluxos de chatbot (o suporte do Wamei Chat foca no funcionamento da plataforma).
-
-## Objetivo
-
-O objetivo do Wamei Chat é oferecer uma tecnologia robusta que sirva como alicerce para a criação de negócios de atendimento escaláveis.
-
-## Central de Ajuda
-
-Esta Central de Ajuda contém a documentação técnica para consulta e orientação sobre as funcionalidades da plataforma. A capacidade de centralizar múltiplos canais de comunicação em uma única plataforma é uma das principais funcionalidades do Wamei Chat.
+Esta Central de Ajuda contém toda a orientação necessária para que você possa configurar e tirar o máximo proveito das funcionalidades da plataforma Wamei Chat.
 
 ### Como Encontrar as Informações
 
 Existem duas formas de localizar o conteúdo:
 
-**Barra de Busca:** Para uma resposta rápida, utilize a barra de busca no topo da página. Pesquise por termos relacionados à sua dúvida, como "Conectar canal", "Chatbot" ou "Whitelabel".
+**Barra de Busca:** Para uma resposta rápida, utilize a barra de busca no topo da página. Pesquise por termos como "Conectar canal", "Chatbot" ou "Relatórios".
 
-**Navegação por Categorias:** Para explorar sobre uma área específica, navegue pelas categorias temáticas na barra lateral. Elas estão organizadas por função para guiar o usuário.
+**Navegação por Categorias:** Explore as categorias temáticas na barra lateral. elas estão organizadas logicamente para guiar você desde a configuração inicial até o uso das ferramentas avançadas.
 
 ### Resumo das Categorias de Documentação
 
-**Primeiro Acesso:** Guias para novos clientes, cobrindo o processo desde o pós-compra e o primeiro login até a conexão do primeiro canal de atendimento.
+**Introdução:** Guias para novos usuários, cobrindo o primeiro login e a conexão do primeiro canal de atendimento.
 
-**Configuração Superadmin:** Documentação completa do Painel Superadmin, focada na gestão da plataforma como um negócio, incluindo clientes (tenants), assinaturas e configurações técnicas.
+**Configuração Admin:** Guias para a configuração base do sistema, incluindo gestão de atendentes, equipes e horários de atendimento.
 
-**Configuração Inicial e Estrutural (admin):** Guias para a configuração base do Painel Admin, incluindo a conexão de canais, organização de atendentes e equipes, e definição do horário de atendimento.
+**Ferramentas de Atendimento:** Detalhes sobre as ferramentas do dia a dia, como caixa de entrada, organização de conversas, funil de vendas e relatórios.
 
-**Ferramentas do Atendimento:** Detalhes sobre as ferramentas utilizadas pela equipe no dia a dia, desde a interface de conversas e colaboração interna até os processos de finalização.
+**Automação e Chatbots:** Documentação sobre como criar fluxos automáticos, utilizar inteligência artificial e realizar campanhas de comunicação.
 
-**Automação e Chatbots:** Documentação sobre como criar e gerenciar automações, incluindo a construção de fluxos de Chatbot e o agendamento de mensagens. Guias para o envio de comunicação proativa, como a criação de campanhas, disparos em massa e a gestão de grupos de contatos.
-
-**Ferramentas Adicionais e Integrações:** Documentação sobre funcionalidades específicas como Funil de Vendas e Kanban, além de integrações como telefonia (Wavoip) e a API para desenvolvedores.
+**Integrações:** Como conectar ferramentas externas, sistemas de telefonia e notificações.
 
 ---
 
-*Esta documentação foi adaptada do sistema Z-PRO para a marca Wamei Chat. Todos os direitos reservados ao sistema original.*
+*Esta documentação foi adaptada para a marca Wamei Chat. Todos os direitos reservados.*

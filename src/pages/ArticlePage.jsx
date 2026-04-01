@@ -43,22 +43,6 @@ function ArticlePage({ navigation: articleNav }) {
 
                 if (response.ok) {
                     let text = await response.text()
-
-                    // Remove referências ao SuperAdmin do conteúdo
-                    text = text
-                        .replace(/Superadmin/gi, 'Administrador')
-                        .replace(/Super Admin/gi, 'Administrador')
-                        .replace(/painel do Administrador/gi, 'painel administrativo')
-                        .replace(/conta Administrador/gi, 'conta administrativa')
-                        .replace(/credenciais do Administrador/gi, 'credenciais de administrador')
-                        .replace(/API do Administrador/gi, 'API administrativa')
-                        .replace(/Painel Administrador/gi, 'Painel Administrativo')
-                        .replace(/Entendendo a Estrutura: Administrador vs\. Admin/gi, 'Entendendo a Estrutura dos Painéis')
-                        .replace(/### Painel Administrador/gi, '### Painel de Gestão')
-                        .replace(/O Administrador é o painel de mais alto nível/gi, 'O Painel de Gestão é o nível administrativo')
-                        .replace(/As principais funcionalidades do painel Administrador/gi, 'As principais funcionalidades do painel de gestão')
-                        .replace(/logout.*da sua conta Administrador/gi, 'logout da sua conta')
-
                     setContent(text)
                 } else {
                     setError('Conteúdo não disponível no momento')
