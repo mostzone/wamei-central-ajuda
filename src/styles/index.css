@@ -1319,92 +1319,195 @@ body {
   font-weight: 700;
 }
 
-/* ===== TUTORIALS PAGE ===== */
+/* ===== TUTORIALS PAGE REDESIGN ===== */
 
 .tutorials-layout {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2.5rem 2rem 3rem;
+  padding: 0 2rem 4rem;
 }
 
-/* Hero */
+/* ── Hero ──────────────────────────────────────────── */
 .tutorials-hero {
+  position: relative;
   text-align: center;
-  padding: 2rem 0 2.5rem;
+  padding: 3.5rem 1rem 3rem;
+  overflow: hidden;
+}
+
+/* Subtle radial glow behind the hero */
+.tutorials-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 84, 139, 0.13) 0%,
+    rgba(1, 232, 132, 0.07) 50%,
+    transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tutorials-hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .tutorials-hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  background: var(--primary-light);
+  padding: 0.45rem 1.1rem;
+  background: linear-gradient(135deg,
+    rgba(255, 84, 139, 0.12) 0%,
+    rgba(1, 232, 132, 0.08) 100%);
+  border: 1px solid rgba(255, 84, 139, 0.25);
   color: var(--primary-color);
   border-radius: 100px;
   font-size: 0.8125rem;
   font-weight: 600;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
+  animation: badgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes badgePop {
+  from { opacity: 0; transform: scale(0.8) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .tutorials-hero h1 {
   font-family: var(--font-sans);
-  font-size: 2.25rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--text-color) 0%, var(--text-muted) 100%);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--text-color) 0%, #4B5563 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  animation: heroSlideUp 0.6s ease 0.1s both;
 }
 
 .tutorials-hero p {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   color: var(--text-muted);
-  max-width: 560px;
-  margin: 0 auto;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.65;
+  animation: heroSlideUp 0.6s ease 0.2s both;
 }
 
-/* Player section */
-.tutorials-player-section {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 1.5rem;
-  align-items: start;
+@keyframes heroSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.tutorials-player-wrapper {
+/* Hero stats row */
+.tutorials-hero-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: box-shadow var(--transition-normal);
+  animation: heroSlideUp 0.6s ease 0.3s both;
+}
+
+.tutorials-hero-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.875rem 1.5rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.tutorials-hero-stat:last-child {
+  border-right: none;
+}
+
+.tutorials-hero-stat-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tutorials-hero-stat-icon.pink {
+  background: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.tutorials-hero-stat-icon.green {
+  background: rgba(1, 232, 132, 0.12);
+  color: var(--green-dark);
+}
+
+.tutorials-hero-stat-icon.blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.tutorials-hero-stat-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tutorials-hero-stat-text strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.1;
+}
+
+.tutorials-hero-stat-text span {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* ── Player section ──────────────────────────────── */
+.tutorials-player-section {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;
+  align-items: start;
+  animation: heroSlideUp 0.6s ease 0.35s both;
+}
+
+.tutorials-player-wrapper {
+  background: #141414;
+  border: 1px solid #333;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: box-shadow var(--transition-slow);
 }
 
 .tutorials-player-wrapper:hover {
-  box-shadow: var(--shadow-lg), var(--shadow-premium);
+  box-shadow:
+    var(--shadow-lg),
+    0 24px 48px -12px rgba(255, 84, 139, 0.12),
+    0 0 0 1px rgba(255, 84, 139, 0.1);
 }
 
-.tutorials-player-frame {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  background: #0f0f0f;
-}
-
-.tutorials-player-frame iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
+/* Player info panel */
 .tutorials-player-info {
-  padding: 1.5rem;
+  padding: 1.5rem 1.75rem 1.75rem;
+  border-top: 1px solid #333;
+  background: linear-gradient(180deg, #1f1f1f 0%, #141414 100%);
 }
 
 .tutorials-player-meta {
@@ -1412,125 +1515,164 @@ body {
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.875rem;
 }
 
 .tutorial-numero-badge {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  padding: 0.3rem 0.85rem;
+  background: linear-gradient(135deg, var(--primary-color), #FF2D78);
   color: white;
   border-radius: 100px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(255, 84, 139, 0.35);
 }
 
 .tutorials-player-title {
   font-family: var(--font-sans);
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
+  color: #ffffff;
+  margin-bottom: 0.625rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 .tutorials-player-desc {
   font-size: 0.9375rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  color: #aaaaaa;
+  line-height: 1.65;
   margin: 0;
 }
 
 /* Tags */
 .tutorial-tag {
   display: inline-block;
-  padding: 0.2rem 0.6rem;
-  background: var(--bg-tertiary);
-  color: var(--text-muted);
+  padding: 0.2rem 0.65rem;
+  background: #333333;
+  border: 1px solid #444444;
+  color: #cccccc;
   border-radius: 100px;
-  font-size: 0.7rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-fast);
 }
 
-/* Video list */
+.tutorial-tag:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-hover);
+  color: white;
+}
+
+/* ── Playlist ────────────────────────────────────── */
 .tutorials-list {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
+  background: #141414;
+  border: 1px solid #333;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 80px;
 }
 
 .tutorials-list-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid var(--border-color);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  background: var(--bg-secondary);
+  justify-content: space-between;
+  padding: 1.125rem 1.25rem;
+  border-bottom: 1px solid #333;
+  background: linear-gradient(135deg, #1f1f1f, #141414);
+}
+
+.tutorials-list-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tutorials-list-header-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  border-radius: 100px;
+  padding: 0.1rem 0.5rem;
+  min-width: 22px;
 }
 
 .tutorials-cards {
   overflow-y: auto;
-  max-height: 580px;
+  max-height: 640px;
+  padding: 0.5rem 0;
 }
 
-/* Video card (list item) */
+.tutorials-cards::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tutorials-cards::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tutorials-cards::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+/* Video card list item */
 .tutorial-card {
   display: flex;
   align-items: flex-start;
   gap: 0.875rem;
   width: 100%;
-  padding: 0.875rem 1.25rem;
+  padding: 0.75rem 1rem;
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--border-light);
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid #222;
   text-align: left;
   cursor: pointer;
-  transition: background var(--transition-fast);
-}
-
-.tutorial-card:last-child {
-  border-bottom: none;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+  margin: 0;
 }
 
 .tutorial-card:hover {
-  background: var(--bg-hover);
+  background: #1f1f1f;
 }
 
 .tutorial-card.active {
-  background: var(--primary-light);
-  position: relative;
+  background: #2a2a2a;
+  border-left-color: var(--primary-color);
 }
 
-.tutorial-card.active::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--primary-color);
-  border-radius: 0 2px 2px 0;
-}
-
+/* Thumbnail */
 .tutorial-card-thumb {
   position: relative;
-  width: 96px;
-  min-width: 96px;
-  height: 60px;
-  border-radius: 8px;
+  width: 100px;
+  min-width: 100px;
+  height: 64px;
+  border-radius: 10px;
   overflow: hidden;
   background: #0f0f0f;
   flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
 }
 
 .tutorial-card-thumb img {
@@ -1538,13 +1680,12 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0;
-  margin: 0;
-  transition: transform var(--transition-normal);
+  transition: transform var(--transition-slow);
 }
 
-.tutorial-card:hover .tutorial-card-thumb img {
-  transform: scale(1.05);
+.tutorial-card:hover .tutorial-card-thumb img,
+.tutorial-card.active .tutorial-card-thumb img {
+  transform: scale(1.06);
 }
 
 .tutorial-play-overlay {
@@ -1553,14 +1694,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   transition: opacity var(--transition-fast);
 }
 
 .tutorial-play-overlay svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
 }
 
@@ -1572,41 +1713,46 @@ body {
 .tutorial-numero {
   position: absolute;
   bottom: 4px;
-  left: 5px;
+  right: 5px;
   font-size: 0.6rem;
-  font-weight: 700;
+  font-weight: 800;
   color: white;
-  background: rgba(0, 0, 0, 0.65);
-  padding: 1px 5px;
-  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 5px;
+  border-radius: 4px;
   letter-spacing: 0.02em;
 }
 
+/* Card info */
 .tutorial-card-info {
   flex: 1;
   min-width: 0;
+  padding-top: 2px;
 }
 
 .tutorial-card-info h3 {
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
+  font-size: 0.825rem;
   font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 0.25rem;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
   line-height: 1.35;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .tutorial-card.active .tutorial-card-info h3 {
   color: var(--primary-color);
+  font-weight: 700;
 }
 
 .tutorial-card-info p {
-  font-size: 0.75rem;
-  color: var(--text-light);
-  line-height: 1.4;
+  font-size: 0.72rem;
+  color: #999999;
+  line-height: 1.45;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -1621,41 +1767,92 @@ body {
   gap: 0.3rem;
 }
 
-/* CTA */
+/* Currently playing indicator */
+.tutorial-card.active .tutorial-card-info h3::before {
+  content: none;
+}
+
+.tutorial-card-playing-badge {
+  display: none;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.tutorial-card.active .tutorial-card-playing-badge {
+  display: flex;
+}
+
+.playing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  animation: playingPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes playingPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.5); opacity: 0.6; }
+}
+
+/* ── CTA ─────────────────────────────────────────── */
 .tutorials-cta {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin-top: 2.5rem;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(1, 232, 132, 0.07) 100%);
+  padding: 1.75rem 2rem;
+  background: linear-gradient(135deg,
+    rgba(255, 84, 139, 0.06) 0%,
+    rgba(1, 232, 132, 0.06) 100%);
   border: 1px solid rgba(255, 84, 139, 0.15);
-  border-radius: 16px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tutorials-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at top right,
+    rgba(1, 232, 132, 0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .tutorials-cta-icon {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  background: var(--primary-color);
-  border-radius: 12px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background: linear-gradient(135deg, var(--primary-color), #FF2D78);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  box-shadow: 0 4px 16px rgba(255, 84, 139, 0.35);
+  flex-shrink: 0;
 }
 
 .tutorials-cta-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
 }
 
 .tutorials-cta h3 {
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 
 .tutorials-cta p {
@@ -1667,37 +1864,78 @@ body {
 .tutorials-cta-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: 0.6rem;
+  padding: 0.875rem 1.75rem;
   background: #25D366;
   color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.875rem;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   margin-left: auto;
   white-space: nowrap;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
 }
 
 .tutorials-cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
 }
 
-/* Responsive tutorials */
-@media (max-width: 900px) {
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 1000px) {
   .tutorials-player-section {
     grid-template-columns: 1fr;
   }
 
+  .tutorials-list {
+    position: static;
+  }
+
   .tutorials-cards {
-    max-height: 360px;
+    max-height: 380px;
+  }
+
+  .tutorials-hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .tutorials-hero-stats {
+    flex-wrap: wrap;
+  }
+
+  .tutorials-hero-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .tutorials-hero-stat:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .tutorials-layout {
+    padding: 0 1rem 3rem;
+  }
+
+  .tutorials-hero {
+    padding: 2.5rem 0.5rem 2rem;
+  }
+
+  .tutorials-hero h1 {
+    font-size: 1.875rem;
+  }
+
+  .tutorials-hero-stats {
+    border-radius: 12px;
   }
 
   .tutorials-cta {
     flex-wrap: wrap;
+    padding: 1.25rem;
   }
 
   .tutorials-cta-btn {
@@ -1706,13 +1944,3 @@ body {
     justify-content: center;
   }
 }
-
-@media (max-width: 640px) {
-  .tutorials-layout {
-    padding: 1.5rem 1rem 2rem;
-  }
-
-  .tutorials-hero h1 {
-    font-size: 1.75rem;
-  }
-}

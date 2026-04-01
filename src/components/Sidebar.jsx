@@ -23,11 +23,7 @@ function Sidebar({ isOpen, searchQuery, onSearchChange }) {
             {/* Header */}
             <div className="sidebar-header">
                 <Link to="/" className="sidebar-logo">
-                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-                        <circle cx="16" cy="16" r="16" fill="#FF548B" />
-                        <path d="M10 21V11l6 5 6-5v10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span className="sidebar-logo-text">Wamei</span>
+                    <img src="/assets/logo-wamei-colorido.png" alt="Wamei" />
                     <span className="sidebar-logo-badge">Ajuda</span>
                 </Link>
             </div>

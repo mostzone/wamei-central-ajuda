@@ -76,6 +76,11 @@ function WameiPlayer({ tutorial }) {
     const [showQuality, setShowQuality] = useState(false)
     const qualityRef = useRef(null)
 
+    // Playback Speed
+    const [playbackRate, setPlaybackRate] = useState(1)
+    const [showSpeed, setShowSpeed] = useState(false)
+    const speedRef = useRef(null)
+
     // Load YT API once (global singleton)
     useEffect(() => {
         if (window.YT && window.YT.Player) return
@@ -139,6 +144,7 @@ function WameiPlayer({ tutorial }) {
                                 setCurrent(cur)
                                 setProgress((cur / dur) * 100)
                                 setCurrentQuality(ytRef.current?.getPlaybackQuality() || 'auto')
+                                setPlaybackRate(ytRef.current?.getPlaybackRate() || 1)
                             }, 250)
                         } else {
                             setPlaying(false)
@@ -150,6 +156,9 @@ function WameiPlayer({ tutorial }) {
                     },
                     onPlaybackQualityChange(e) {
                         setCurrentQuality(e.data)
+                    },
+                    onPlaybackRateChange(e) {
+                        setPlaybackRate(e.data)
                     },
                 },
             })
@@ -171,6 +180,17 @@ function WameiPlayer({ tutorial }) {
         const handler = (e) => {
             if (qualityRef.current && !qualityRef.current.contains(e.target)) {
                 setShowQuality(false)
+            }
+        }
+        document.addEventListener('mousedown', handler)
+        return () => document.removeEventListener('mousedown', handler)
+    }, [])
+
+    // Close speed menu on outside click
+    useEffect(() => {
+        const handler = (e) => {
+            if (speedRef.current && !speedRef.current.contains(e.target)) {
+                setShowSpeed(false)
             }
         }
         document.addEventListener('mousedown', handler)
@@ -266,6 +286,13 @@ function WameiPlayer({ tutorial }) {
         ytRef.current.setPlaybackQuality(level)
         setCurrentQuality(level)
         setShowQuality(false)
+    }
+
+    const setSpeed = (rate) => {
+        if (!ytRef.current) return
+        ytRef.current.setPlaybackRate(rate)
+        setPlaybackRate(rate)
+        setShowSpeed(false)
     }
 
     const VolumeIcon = () => {
@@ -376,6 +403,40 @@ function WameiPlayer({ tutorial }) {
                         </div>
                     </div>
 
+                    {/* Speed */}
+                    <div className="wp-quality-wrap" ref={speedRef}>
+                        <button
+                            className="wp-btn wp-quality-btn"
+                            onClick={() => setShowSpeed(p => !p)}
+                            aria-label="Velocidade do vídeo"
+                        >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <polygon points="5 4 15 12 5 20 5 4" />
+                                <polygon points="13 4 23 12 13 20 13 4" />
+                            </svg>
+                            <span className="wp-quality-label">{playbackRate === 1 ? '1x' : playbackRate + 'x'}</span>
+                        </button>
+                        {showSpeed && (
+                            <div className="wp-quality-menu">
+                                <div className="wp-quality-menu-title">Velocidade</div>
+                                {[0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2].map(rate => (
+                                    <button
+                                        key={rate}
+                                        className={`wp-quality-option ${playbackRate === rate ? 'active' : ''}`}
+                                        onClick={() => setSpeed(rate)}
+                                    >
+                                        {playbackRate === rate && (
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                                <polyline points="20 6 9 17 4 12" />
+                                            </svg>
+                                        )}
+                                        {rate === 1 ? 'Normal' : `${rate}x`}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
                     {/* Quality */}
                     {qualityLevels.length > 0 && (
                         <div className="wp-quality-wrap" ref={qualityRef}>
@@ -455,6 +516,10 @@ function VideoCard({ tutorial, isActive, onClick }) {
                 <span className="tutorial-numero">Vídeo {tutorial.numero}</span>
             </div>
             <div className="tutorial-card-info">
+                <div className="tutorial-card-playing-badge">
+                    <span className="playing-dot" />
+                    Reproduzindo
+                </div>
                 <h3>{tutorial.titulo}</h3>
                 <p>{tutorial.descricao}</p>
                 <div className="tutorial-tags">
@@ -479,7 +544,7 @@ function TutoriaisPage() {
                 {/* Hero */}
                 <div className="tutorials-hero">
                     <div className="tutorials-hero-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                             <polygon points="23 7 16 12 23 17 23 7" />
                             <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                         </svg>
@@ -487,6 +552,7 @@ function TutoriaisPage() {
                     </div>
                     <h1>Aprenda na prática</h1>
                     <p>Vídeos passo a passo para você dominar a plataforma Wamei e atender ainda melhor seus clientes.</p>
+
                 </div>
 
                 {/* Player + List */}
@@ -509,13 +575,16 @@ function TutoriaisPage() {
                     {/* Playlist */}
                     <div className="tutorials-list">
                         <div className="tutorials-list-header">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" />
-                                <line x1="8" y1="18" x2="21" y2="18" />
-                                <line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" />
-                                <line x1="3" y1="18" x2="3.01" y2="18" />
-                            </svg>
-                            <span>{tutoriais.length} vídeos</span>
+                            <div className="tutorials-list-header-left">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" />
+                                    <line x1="8" y1="18" x2="21" y2="18" />
+                                    <line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" />
+                                    <line x1="3" y1="18" x2="3.01" y2="18" />
+                                </svg>
+                                Playlist
+                                <span className="tutorials-list-header-count">{tutoriais.length}</span>
+                            </div>
                         </div>
                         <div className="tutorials-cards">
                             {tutoriais.map(t => (
@@ -539,7 +608,7 @@ function TutoriaisPage() {
                     </div>
                     <div>
                         <h3>Ficou com dúvidas?</h3>
-                        <p>Nossa equipe está pronta para ajudar você.</p>
+                        <p>Nossa equipe de suporte está pronta para ajudar você.</p>
                     </div>
                     <a
                         href="https://wa.me/558596093545"
