@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import HomePage from './pages/HomePage'
 import ArticlePage from './pages/ArticlePage'
+import TutoriaisPage from './pages/TutoriaisPage'
 import { navigation } from './data/navigation'
 
 function App() {
@@ -82,6 +83,10 @@ function App() {
                                 onSearchChange={setSearchQuery}
                             />
                         }
+                    />
+                    <Route
+                        path="/tutoriais"
+                        element={<TutoriaisPage />}
                     />
                     <Route
                         path="/:articleId"

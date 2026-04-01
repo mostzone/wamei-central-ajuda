@@ -63,6 +63,18 @@ function Sidebar({ isOpen, searchQuery, onSearchChange }) {
                     Início
                 </Link>
 
+                {/* Tutoriais Link */}
+                <Link
+                    to="/tutoriais"
+                    className={`nav-item ${location.pathname === '/tutoriais' ? 'active' : ''}`}
+                >
+                    <svg className="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polygon points="23 7 16 12 23 17 23 7" />
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                    </svg>
+                    Tutoriais
+                </Link>
+
                 {/* Sections */}
                 {navigation.map(section => (
                     <div
